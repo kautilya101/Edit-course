@@ -12,12 +12,11 @@ type CustomAutocompleteProps<T extends Option> = Omit<
   name: string
   componentType?: string
   defaultData?: T[] 
-  handleChange: (option : T) => void
   renderOption?: (option: T) => React.ReactNode;
 };
 
 
-const CustomAutoComplete = <T extends Option> ({name,defaultData,options,renderOption,handleChange}: CustomAutocompleteProps<T>) => {
+const CustomAutoComplete = <T extends Option> ({name,defaultData,options,renderOption}: CustomAutocompleteProps<T>) => {
   
   return (
         <Autocomplete

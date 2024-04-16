@@ -8,7 +8,7 @@ import useFetch from '../Hooks/useFetch';
 
 export default function FormPage() {
 
-  const {course,tagsList,enrolledListItems} = useLoaderData();
+  const {course,tagsList,enrolledListItems} = useLoaderData() ;
   const fetcher = useFetcher();
 
 

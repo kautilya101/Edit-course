@@ -12,13 +12,12 @@ type CustomAutocompleteProps<T extends Option> = Omit<
   name: string
   componentType?: string
   defaultData?: T[] 
-  handleDataFetch: () => void
   handleChange: (option : T) => void
   renderOption?: (option: T) => React.ReactNode;
 };
 
 
-const CustomAutoComplete = <T extends Option> ({name,defaultData,handleDataFetch,options,renderOption,handleChange}: CustomAutocompleteProps<T>) => {
+const CustomAutoComplete = <T extends Option> ({name,defaultData,options,renderOption,handleChange}: CustomAutocompleteProps<T>) => {
   
   return (
         <Autocomplete
@@ -35,8 +34,7 @@ const CustomAutoComplete = <T extends Option> ({name,defaultData,handleDataFetch
             </li>
           )}
           sx={{ mb:'20px' }}
-          onFocus={handleDataFetch}
-          onChange={(event,newValue) => handleChange(newValue)}
+          // onChange={(event,newValue) => handleChange(newValue)}
           renderTags={(value: string[], getTagProps) =>
             value.map((option: string , index: number) => (
               <Chip
